@@ -5,11 +5,11 @@ export function Menu() {
   return (
     <Container>
       <div className="topnav" id="myTopnav">
-        <a href="#home" className="active home">
+        <a href="/" className="active home">
           <House size={24} />
           Home
         </a>
-        <a href="#news">Produtos</a>
+        <a href="/">Produtos</a>
 
         <div className="dropdown">
           <button className="dropbtn">

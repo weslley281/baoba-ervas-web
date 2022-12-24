@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Link = styled.a`
+  text-decoration: none;
+`;
+
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.secondary};
   width: 300px;
