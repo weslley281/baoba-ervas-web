@@ -22,37 +22,14 @@ export function Home() {
   const [isLoadingProduct, setIsLoadingProduct] = useState(false);
   const [isFirstRender, setIsFirstRender] = useState(true);
 
-  async function fetchProducts() {
-    const { data } = await api.get(`products/product_list`);
-
-    const products = data.items.map((product: ProductInfo) => {
-      return {
-        id: product.product_id,
-        name: product.name,
-        description: product.description,
-        price: product.price,
-        category: product.category,
-        image: product.image,
-        createdAt: product.createdAt,
-      };
-    });
-
-    setProducts(products);
-    setIsLoadingProduct(false);
-  }
-
   useEffect(() => {
-    if (isFirstRender) {
-      setIsFirstRender(false);
-    } else {
-      setIsLoadingProduct(true);
-      const timeout = setTimeout(async () => {
-        await fetchProducts();
-      }, 3000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [search]);
+    api
+      .get('/products/product_list')
+      .then((response) => setProducts(response.data))
+      .catch((err) => {
+        console.error('ops! ocorreu um erro' + err);
+      });
+  }, []);
 
   return (
     <ContainerPrimcipal>
@@ -64,7 +41,7 @@ export function Home() {
               <CardProduct
                 key={product.product_id}
                 name={product.name}
-                image="https://www.rmouracereais.com.br/admin/uploads/alpiste-canadense.jpg"
+                image={product.image}
                 price={product.price}
               />
             );
