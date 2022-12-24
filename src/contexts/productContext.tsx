@@ -48,12 +48,14 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
         q: query,
       },
     });
+
+    setProducts((state) => [response.data, ...state]);
   }, []);
 
   const createProduct = useCallback(async (data: CreateProductsInput) => {
     const { name, image, description, price, category } = data;
 
-    const response = await api.post('products', {
+    const response = await api.post('products/product_list', {
       name,
       image,
       description,
