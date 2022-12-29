@@ -40,6 +40,7 @@ export function Home() {
             return (
               <CardProduct
                 key={product.product_id}
+                product_id={product.product_id}
                 name={product.name}
                 image={product.image}
                 price={product.price}

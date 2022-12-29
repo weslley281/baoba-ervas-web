@@ -1,16 +1,16 @@
 import { CardFooter, Container, ImageProduct, Link } from './styles';
 
 interface CardProps {
+  product_id: number;
   name: string;
   image: string;
   price: number;
-  datas: Object;
 }
 
-export function CardProduct({ name, image, price }: CardProps) {
-  const linkPage = `/products`;
+export function CardProduct({ product_id, name, image, price }: CardProps) {
+  const url = `/product/${product_id}`;
   return (
-    <Link href={linkPage}>
+    <Link href={url}>
       <Container>
         <ImageProduct src={image} />
         <CardFooter>

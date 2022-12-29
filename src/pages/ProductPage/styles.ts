@@ -7,13 +7,46 @@ export const Container = styled.div`
 
   section {
     display: flex;
+    flex: 1;
     flex-direction: row;
     justify-content: space-between;
 
     aside {
       flex: 0.5;
-      background-color: blue;
+      height: calc(100vh);
+
+      .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .details {
+        padding: 20% 5%;
+
+        h1 {
+          font-size: 2rem;
+          color: ${({ theme }) => theme.main};
+        }
+
+        .price {
+          padding: 10px;
+          display: flex;
+          flex-direction: row-reverse;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        .descripition {
+          padding: 50px;
+          font-size: 1.2rem;
+        }
+      }
     }
+  }
+
+  .more {
   }
 
   @media only screen and (max-width: 600px) {
@@ -23,8 +56,22 @@ export const Container = styled.div`
       justify-content: center;
 
       aside {
+        padding: 50px;
         flex: 1;
-        background-color: blue;
+
+        .image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .details {
+          padding: 2%;
+
+          h1 {
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }
