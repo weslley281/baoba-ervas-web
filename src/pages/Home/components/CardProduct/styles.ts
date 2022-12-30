@@ -7,10 +7,11 @@ export const Link = styled.a`
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.secondary};
   width: 300px;
-  height: 300px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
+
   flex-wrap: wrap;
   border-radius: 6px;
 `;
@@ -21,11 +22,10 @@ export const ImageProduct = styled.img`
 `;
 
 export const CardFooter = styled.footer`
-  width: 100%;
   display: flex;
+  flex: 1;
   align-items: center;
   padding: 1rem;
-  justify-content: space-between;
   flex-wrap: wrap;
 
   p {
@@ -39,5 +39,27 @@ export const CardFooter = styled.footer`
   .price {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .actions {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .buy-button {
+    background: ${(props) => props.theme.main};
+    color: ${(props) => props.theme.white};
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+      background: ${(props) => props.theme.secondary};
+    }
   }
 `;
