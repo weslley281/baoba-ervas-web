@@ -7,10 +7,10 @@ export const Link = styled.a`
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.secondary};
   width: 300px;
-  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 
   flex-wrap: wrap;
   border-radius: 6px;
@@ -25,6 +25,7 @@ export const CardFooter = styled.footer`
   display: flex;
   flex: 1;
   align-items: center;
+  flex-direction: column;
   padding: 1rem;
   flex-wrap: wrap;
 
@@ -47,19 +48,25 @@ export const CardFooter = styled.footer`
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-  }
 
-  .buy-button {
-    background: ${(props) => props.theme.main};
-    color: ${(props) => props.theme.white};
-    padding: 0.5rem;
-    border-radius: 6px;
-    display: flex;
-    place-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    &:hover {
-      background: ${(props) => props.theme.secondary};
+    div {
+      display: flex;
+      flex: 1;
+
+      .buy-button {
+        background: ${(props) => props.theme.main};
+        color: ${(props) => props.theme.white};
+        padding: 0.5rem;
+        border-radius: 6px;
+        display: flex;
+        place-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background: ${(props) => props.theme.secondary};
+        }
+      }
     }
   }
 `;
