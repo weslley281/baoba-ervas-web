@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const InputCountContainer = styled.div`
+  background-color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
   gap: 4px;
-  width: 80px;
+  width: 100px;
   height: 32px;
   background: ${(props) => props.theme.main};
   border-radius: 8px;
@@ -17,7 +18,7 @@ export const InputCountContainer = styled.div`
   }
 
   input {
-    width: 1.5rem;
+    width: 2rem;
     background: transparent;
     border: none;
     display: flex;

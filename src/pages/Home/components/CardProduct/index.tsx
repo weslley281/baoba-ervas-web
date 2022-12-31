@@ -40,8 +40,8 @@ export function CardProduct({ product_id, name, image, price }: CardProps) {
   function handleAddOneProductUnity() {
     const newCount = count + 1;
 
-    if (newCount >= 100) {
-      toast.warn('Quantidade máxima: 99');
+    if (newCount >= 6) {
+      toast.warn('Quantidade máxima: 5');
       return;
     }
 
@@ -100,18 +100,21 @@ export function CardProduct({ product_id, name, image, price }: CardProps) {
         </div>
 
         <div className="actions">
-          <InputCount
-            value={count}
-            onChange={(e) => handleChangeProductUnity(Number(e.target.value))}
-            onAddOneProductUnity={handleAddOneProductUnity}
-            onRemoveProductUnity={handleRemoveOneProductUnity}
-            min={1}
-            max={5}
-          />
-
-          <button className="buy-button" onClick={hanldeAddToShoppingCart}>
-            <ShoppingCart size={15} weight="fill" />
-          </button>
+          <div>
+            <InputCount
+              value={count}
+              onChange={(e) => handleChangeProductUnity(Number(e.target.value))}
+              onAddOneProductUnity={handleAddOneProductUnity}
+              onRemoveProductUnity={handleRemoveOneProductUnity}
+              min={1}
+              max={5}
+            />
+          </div>
+          <div>
+            <button className="buy-button" onClick={hanldeAddToShoppingCart}>
+              <ShoppingCart size={15} weight="fill" />
+            </button>
+          </div>
         </div>
       </CardFooter>
     </Container>
